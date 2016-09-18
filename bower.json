@@ -1,0 +1,23 @@
+{
+  "name": "template-creator",
+  "homepage": "https://github.com/Pancake-CMS/template-creator",
+  "authors": [
+    "Prateek Jadhwani <prateekjadhwani@users.noreply.github.com>"
+  ],
+  "description": "A Polymer web component that lets a user create a template for the pancake cms page",
+  "main": "template-creator.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer#^1.6.1",
+    "app-layout": "PolymerElements/app-layout#^0.10.4",
+    "component-list": "pancake-cms-component-list#*",
+    "polymerfire": "firebase/polymerfire#^0.9.7"
+  }
+}
