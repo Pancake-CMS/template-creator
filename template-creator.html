@@ -1,12 +1,13 @@
-<link rel="import" href="./bower_components/polymer/polymer.html">
-<link rel="import" href="./bower_components/polymerfire/firebase-app.html">
-<link rel="import" href="./bower_components/polymerfire/firebase-document.html">
-<link rel="import" href="./bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
-<link rel="import" href="./bower_components/app-layout/app-drawer/app-drawer.html">
-<link rel="import" href="./bower_components/app-layout/app-header-layout/app-header-layout.html">
-<link rel="import" href="./bower_components/app-layout/app-header/app-header.html">
-<link rel="import" href="./bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="./bower_components/component-list/component-list.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymerfire/firebase-app.html">
+<link rel="import" href="../polymerfire/firebase-document.html">
+<link rel="import" href="../app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../app-layout/app-header/app-header.html">
+<link rel="import" href="../app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../component-list/component-list.html">
+<link rel="import" href="../css-grid/css-grid.html">
 
 <dom-module id="template-creator">
     <template>
@@ -34,13 +35,15 @@
                         <div main-title>App name</div>
                     </app-toolbar>
                 </app-header>
-                <css-grid></css-grid>
+                <css-grid
+                    add-components-text="Try dragging and dropping components here"
+                    in-edit-mode="true">
+                </css-grid>
             </app-header-layout>
         </app-drawer-layout>
 
 
     </template>
-    <script src="https://pancake-cms.github.io/css-grid/index.js"></script>
     <script>
         Polymer({
             is: 'template-creator',
@@ -48,9 +51,9 @@
             properties: {
                 components : {
                     type: Array,
-                    notify: true
+                    notify: true,
                 }
-            }
+            },
         })
     </script>
 </dom-module>
