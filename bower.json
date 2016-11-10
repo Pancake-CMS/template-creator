@@ -20,6 +20,7 @@
     "component-list": "pancake-cms-component-list#*",
     "polymerfire": "firebase/polymerfire#^0.9.7",
     "css-grid": "pancake-cms-css-grid#*",
-    "template-operator": "pancake-cms-template-operator#*"
+    "template-operator": "pancake-cms-template-operator#*",
+    "page-links": "pancake-cms-page-links#*"
   }
 }
