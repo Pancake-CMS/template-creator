@@ -1,5 +1,4 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../polymerfire/firebase-app.html">
 <link rel="import" href="../polymerfire/firebase-document.html">
 <link rel="import" href="../app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../app-layout/app-drawer/app-drawer.html">
@@ -12,11 +11,14 @@
 
 <dom-module id="template-creator">
     <template>
-        <firebase-app
-            auth-domain="__YOUR_AUTH_DOMAIN__"
-            database-url="__YOUR_DATABASE_URL__"
-            api-key="__YOUR_API_KEY__">
-        </firebase-app>
+        <style type="text/css">
+            :host {
+                display: none;
+            }
+            :host([active]){
+                display: block;
+            }
+        </style>
         <firebase-document
             path="/components"
             data="{{components}}">
