@@ -25,18 +25,12 @@
         <app-drawer-layout>
             <app-drawer>
                 <app-toolbar>
-                    <div main-title>App name</div>
+                    <div main-title>{{name}}</div>
                 </app-toolbar>
                 <component-list components="[[components]]"></component-list>
             </app-drawer>
             <app-header-layout>
-                <app-header>
-                    <app-toolbar>
-                        <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-                        <div main-title>App name</div>
-                    </app-toolbar>
-                </app-header>
-                <template-operator name=""></template-operator>
+                <template-operator name$="{{name}}"></template-operator>
                 <css-grid
                     add-components-text="Try dragging and dropping components here"
                     path="/"
@@ -55,6 +49,11 @@
                 components : {
                     type: Array,
                     notify: true,
+                },
+
+                name: {
+                    type: String,
+                    notify: true
                 }
             }
         })

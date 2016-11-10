@@ -7,13 +7,42 @@
             font-size: 16px;
         }
 
+        .left {
+            text-align: left;
+        }
+        .center {
+            text-align: center;
+        }
+        .right {
+            text-align: right;
+        }
     </style>
     <template>
-        <p>Hello World</p>
+        <p class$="[[alignClass]]">Hello World</p>
     </template>
     <script>
         Polymer({
-            is: 'demo-text-el'
+            is: 'demo-text-el',
+
+            properties: {
+                align: {
+                    type: Number,
+                    value: 0
+                },
+
+                alignClass: {
+                    type: String,
+                    computed: 'generateClassName(align)'
+                }
+            },
+
+            generateClassName: function(num) {
+                switch(num) {
+                    case 0: return 'left';
+                    case 1: return 'center';
+                    case 2: return 'right';
+                }
+            }
         });
     </script>
 </dom-module>
