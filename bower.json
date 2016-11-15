@@ -22,5 +22,10 @@
     "css-grid": "pancake-cms-css-grid#*",
     "template-operator": "pancake-cms-template-operator#*",
     "page-links": "pancake-cms-page-links#*"
+  },
+  "devDependencies": {
+    "demo-image-el": "pancake-cms-demo-image-el#*",
+    "demo-text-el": "pancake-cms-demo-text-el#*",
+    "demo-text-nested-el": "pancake-cms-demo-text-nested-el#*"
   }
 }
