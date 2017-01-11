@@ -24,6 +24,11 @@
             data="{{components}}">
         </firebase-document>
 
+        <firebase-document
+            path$="{{templateRoute}}"
+            data="{{templatecomponents}}">
+        </firebase-document>
+
         <app-drawer-layout>
             <app-drawer>
                 <app-toolbar>
@@ -36,6 +41,7 @@
                 <css-grid
                     add-components-text="Try dragging and dropping components here"
                     path="/"
+                    rawcomponents="{{templatecomponents}}"
                     in-edit-mode="true">
                 </css-grid>
             </app-header-layout>
@@ -53,10 +59,36 @@
                     notify: true,
                 },
 
-                name: {
+                subroute: {
                     type: String,
                     notify: true
+                },
+
+                name: {
+                    type: String,
+                    notify: true,
+                    computed: '_computeName(subroute)'
+                },
+
+                templateRoute: {
+                    type: String,
+                    notify: true,
+                    computed: '_computeTemplateRoute(subroute)'
                 }
+            },
+
+            _computeName: function(subroute) {
+                var name = subroute.split('/')[1];
+                return name;
+            },
+
+            _computeTemplateRoute: function(subroute) {
+                var name = subroute.split('/')[1];
+                if(!!name) {
+                    return '/templates/' + name;
+                }
+
+                return null;
             }
         })
     </script>
