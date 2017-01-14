@@ -42,7 +42,7 @@
                     add-components-text="Try dragging and dropping components here"
                     path="/"
                     rawcomponents="{{templatecomponents}}"
-                    in-edit-mode="true">
+                    in-edit-mode="[[inEditMode]]">
                 </css-grid>
             </app-header-layout>
         </app-drawer-layout>
@@ -74,6 +74,12 @@
                     type: String,
                     notify: true,
                     computed: '_computeTemplateRoute(subroute)'
+                },
+
+                inEditMode: {
+                    type: Boolean,
+                    value: true,
+                    notify: true
                 }
             },
 
